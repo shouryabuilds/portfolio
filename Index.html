@@ -1,0 +1,1488 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SHOURYA MEHTA — Portfolio &amp; Hot Wheels Turbo Edition</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Caveat:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary": "#ffffff",
+            "primary-container": "#2170e4",
+            "outline": "#727785",
+            "background": "#fbf8fc",
+            "secondary-fixed": "#ffe083",
+            "on-secondary-fixed-variant": "#574500",
+            "surface-dim": "#dcd9dd",
+            "surface-bright": "#fbf8fc",
+            "primary": "#0058be",
+            "on-primary": "#ffffff",
+            "tertiary": "#b21f32",
+            "secondary-container": "#fed01b",
+            "on-surface": "#1b1b1e",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f6f2f7",
+            "surface-container": "#f0edf1",
+            "surface-container-high": "#eae7eb",
+            "on-surface-variant": "#424754"
+          },
+          fontFamily: {
+            "body-lg": ["Space Grotesk", "sans-serif"],
+            "body-md": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-xl": ["Anton", "sans-serif"],
+            "headline-lg": ["Anton", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "label-code": ["Space Mono", "monospace"],
+            "handwriting": ["Caveat", "cursive"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .bg-notepad {
+      background-color: #fbf8fc;
+      background-image: 
+        radial-gradient(#1b1b1e 0.75px, transparent 0.75px),
+        linear-gradient(to bottom, transparent 31px, rgba(27, 27, 30, 0.07) 32px);
+      background-size: 32px 32px, 100% 32px;
+    }
+    .tape-strip {
+      background: rgba(245, 238, 205, 0.95);
+      border: 1px dashed rgba(180, 165, 120, 0.75);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: absolute;
+    }
+    .vertical-curb-left {
+      background: repeating-linear-gradient(0deg, #dc2626, #dc2626 14px, #ffffff 14px, #ffffff 28px);
+    }
+    .vertical-curb-right {
+      background: repeating-linear-gradient(0deg, #ffffff, #ffffff 14px, #dc2626 14px, #dc2626 28px);
+    }
+    .dashed-lane-vertical {
+      background-image: repeating-linear-gradient(180deg, #fed01b, #fed01b 16px, transparent 16px, transparent 32px);
+    }
+    .asphalt-texture {
+      background-color: #0f172a;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 8px 8px;
+    }
+    .checkered-pattern {
+      background-color: #111827;
+      background-image: 
+        linear-gradient(45deg, #f9fafb 25%, transparent 25%), 
+        linear-gradient(-45deg, #f9fafb 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #f9fafb 75%), 
+        linear-gradient(-45deg, transparent 75%, #f9fafb 75%);
+      background-size: 14px 14px;
+      background-position: 0 0, 0 7px, 7px -7px, -7px 0px;
+    }
+    #game-canvas {
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body class="bg-notepad text-on-surface antialiased selection:bg-secondary-container selection:text-black min-h-screen relative overflow-x-hidden">
+<!-- TOP NAV BAR -->
+<header class="border-b-2 border-on-surface bg-surface-container-lowest shadow-[0px_4px_0px_#1b1b1e] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto py-3">
+<a class="flex items-center gap-2 group" href="#home">
+<span class="font-headline-sm font-bold text-on-surface tracking-wider">
+          SHOURYA MEHTA
+        </span>
+</a>
+<nav class="hidden md:flex items-center gap-1.5 lg:gap-2">
+<a class="bg-secondary-container text-black px-3 py-1.5 rounded-lg border-2 border-on-surface font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e]" href="#home">HOME</a>
+<a class="text-on-surface font-label-code text-xs font-bold px-3 py-1.5 hover:text-primary transition-colors" href="#journey">JOURNEY</a>
+<a class="text-tertiary font-bold font-label-code text-xs px-3 py-1.5 hover:text-primary transition-colors flex items-center gap-1 bg-[#ffdad9]/40 rounded-md border border-tertiary/30" href="#instagram"><span class="">INSTA</span></a>
+<a class="text-on-surface font-label-code text-xs font-bold px-3 py-1.5 hover:text-primary transition-colors" href="#skills">SKILLS</a>
+<a class="text-on-surface font-label-code text-xs font-bold px-3 py-1.5 hover:text-primary transition-colors" href="#designs">DESIGNS</a>
+<a class="text-on-surface font-label-code text-xs font-bold px-3 py-1.5 hover:text-primary transition-colors" href="#events">CAMPUS LIFE</a>
+</nav>
+<div class="flex items-center gap-3">
+<a class="font-label-code text-xs font-bold px-4 py-1.5 rounded-lg border-2 border-on-surface bg-primary text-on-primary shadow-[3px_3px_0px_#1b1b1e] hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_#1b1b1e] transition-all flex items-center gap-1.5" href="#contact">
+<span class="">PLAY MINI-GAME</span>
+<span class="material-symbols-outlined text-[16px]">sports_esports</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT CONTAINER -->
+<main class="max-w-7xl mx-auto px-4 md:px-8 py-8 md:py-16 space-y-24 md:space-y-32 relative">
+<!-- 1. HERO SECTION -->
+<section class="relative pt-2" id="home">
+<!-- Symmetrical Status Ribbon Header -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-4 px-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+
+</div>
+<div class="flex items-center gap-2">
+
+</div>
+</div>
+<div class="relative border-4 border-on-surface bg-surface-container-lowest p-6 md:p-12 rounded-xl shadow-[8px_8px_0px_#1b1b1e] overflow-hidden">
+<div class="tape-strip -top-3 left-10 w-24 h-6 -rotate-3 z-10"></div>
+<div class="tape-strip -bottom-3 right-12 w-24 h-6 rotate-2 z-10"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<div class="lg:col-span-8 space-y-5">
+<h1 class="font-headline-xl text-5xl md:text-7xl text-on-surface tracking-tight uppercase leading-none">
+              I'M <span class="text-primary underline decoration-secondary-container decoration-wavy decoration-4">SHOURYA</span>
+</h1>
+<p class="font-headline-sm text-lg md:text-xl text-on-surface font-bold max-w-2xl leading-snug">
+              CSIT undergraduate at Symbiosis Indore, crafting bold visual identities, event graphics, and interactive digital interfaces.
+            </p>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant max-w-xl leading-relaxed">
+              Passionate student designer &amp; developer balancing coursework with campus club leadership at CODEC, design workshops, and hackathons.
+            </p>
+<div class="pt-2 flex flex-wrap gap-2.5">
+<span class="font-label-code text-xs bg-secondary-container text-black px-3.5 py-1.5 rounded-full border-2 border-on-surface shadow-[2px_2px_0px_#1b1b1e] font-bold">
+                🎨 Brand &amp; Poster Design
+              </span>
+<span class="font-label-code text-xs bg-[#ffdad9] text-tertiary px-3.5 py-1.5 rounded-full border-2 border-on-surface shadow-[2px_2px_0px_#1b1b1e] font-bold">
+                💻 WebDev &amp; Prototyping
+              </span>
+<span class="font-label-code text-xs bg-[#adc6ff] text-primary px-3.5 py-1.5 rounded-full border-2 border-on-surface shadow-[2px_2px_0px_#1b1b1e] font-bold">
+                🚀 Campus Tech &amp; Community
+              </span>
+</div>
+</div>
+<!-- Hero Portrait Polaroid Frame -->
+<div class="lg:col-span-4 flex flex-col items-center justify-center relative">
+<div class="absolute -top-6 -right-2 z-20 w-24 h-24 rounded-full bg-tertiary text-white border-2 border-on-surface flex flex-col items-center justify-center shadow-[4px_4px_0px_#1b1b1e] rotate-12">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+<span class="font-label-code text-[9px] uppercase tracking-wider text-center font-bold mt-0.5 leading-tight">CREATING MY<br>OWN LANE</span>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-3 pb-6 rounded shadow-[6px_6px_0px_#1b1b1e] rotate-2 hover:rotate-0 transition-transform w-full max-w-[280px]">
+<div class="tape-strip -top-3 left-1/2 -translate-x-1/2 w-20 h-5"></div>
+<div class="aspect-square bg-surface-container border-2 border-on-surface overflow-hidden relative mb-3">
+<img alt="Portrait of Shourya Mehta" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Sn8x_q_MHa2uMuOco-VG8QrOz4wr5UObYWl3V0tNkpOIvGBkJTuNrR_Wa-2jWYZNACTGeige08WoHBpQFergIw4F6Aack81x_oJ9T3HP9NVFXTZoH_EJDIR-3PvQt5zwohVI2ahhWbd0t2VO62vu5wfb7Qh8CvZORJOzBut_A-QHS3J3hsLklA1CvRfS4hRFQP-ceY-E-XJh5fN0J0Xolm3iOiz9j05xMHVQ6f444i23rSCT0Ng3-j3vy03Ukx5DmdToFbmSAP-oEAw">
+</div>
+<div class="flex justify-between items-center px-1">
+<span class="font-handwriting text-2xl font-bold text-on-surface">Shourya M.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. THE JOURNEY: VERTICAL RACING ROAD TRACK WITH RED BULL F1 RACER & CHECKPOINTS -->
+<section class="relative scroll-mt-20 space-y-8" id="journey">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-on-surface pb-6">
+<div>
+<div class="flex items-center gap-2 mb-2 flex-wrap">
+<span class="w-3 h-3 rounded-full bg-red-500 border border-on-surface animate-ping"></span>
+</div>
+<h2 class="font-headline-lg text-4xl md:text-5xl text-on-surface tracking-tight uppercase flex items-center gap-3">
+            THE JOURNEY <span class="text-tertiary">// TURBO ROAD 🏎️</span>
+</h2>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant mt-1.5 max-w-2xl"></p><p class="">A high-speed journey through Shourya’s story, from his roots in Ujjain to college life, creative ventures, and hackathon stages. Race through five career checkpoints, each marking a new milestone.</p><p class=""></p>
+</div>
+<div class="flex flex-wrap items-center gap-2.5"><div class="bg-black text-secondary-container border-2 border-on-surface px-3 py-1.5 rounded-md font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e] flex items-center gap-2.5"><div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span><span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span></div><span id="circuit-live-speed" class="text-yellow-300 tracking-wider">SPEED: 340 KM/H NITRO</span></div><button class="bg-tertiary text-white border-2 border-on-surface px-3 py-1.5 rounded-md font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e] hover:-translate-y-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5 cursor-pointer" id="track-audio-toggle" title="Toggle Hot Wheels Red Bull F1 V10 Twin Turbo Audio"><span class="material-symbols-outlined text-[16px]">volume_up</span><span id="track-audio-label" class="">V10 ROAR: ON (340 KM/H)</span></button></div>
+</div>
+<!-- VERTICAL ROAD CONTAINER WITH STAGGERED CADENCE -->
+<div class="relative py-6" id="racing-circuit-container">
+<!-- Asphalt Vertical Road Spine -->
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-16 md:w-24 asphalt-texture border-x-4 border-on-surface shadow-[6px_0px_0px_#1b1b1e] z-10 flex justify-between rounded-md overflow-hidden">
+<div class="w-2.5 h-full vertical-curb-left border-r border-black/40"></div>
+<div class="w-1.5 h-full dashed-lane-vertical opacity-90 mx-auto"></div>
+<div class="w-2.5 h-full vertical-curb-right border-l border-black/40"></div>
+</div>
+<!-- UPGRADED DYNAMIC MOVING HOT WHEELS RACER AVATAR WITH DUAL EXHAUST FLAMES & HEADLIGHTS -->
+        <div class="absolute left-6 md:left-1/2 -translate-x-1/2 z-30 transition-transform duration-100 ease-out pointer-events-none select-none" id="vertical-hot-wheels-car" style="top: 24px; transform: translate(-50%, 1977px);"><div class="relative flex flex-col items-center select-none"><div class="absolute -top-16 left-1/2 -translate-x-1/2 flex items-end justify-center gap-3.5 z-0 pointer-events-none w-28"><div class="relative flex flex-col items-center"><div class="w-3.5 h-16 bg-gradient-to-t from-red-600 via-amber-400 to-transparent blur-[1.5px] rounded-full animate-ping opacity-95"></div><div class="absolute bottom-0 w-2 h-12 bg-gradient-to-t from-yellow-300 via-amber-200 to-transparent rounded-full animate-pulse"></div><div class="absolute bottom-0 w-1.5 h-7 bg-gradient-to-t from-cyan-300 via-cyan-400 to-transparent rounded-full blur-[0.5px]"></div><div class="absolute -top-2 w-1.5 h-1.5 bg-yellow-300 rounded-full animate-ping"></div></div><div class="relative flex flex-col items-center -mb-1"><div class="w-4 h-20 bg-gradient-to-t from-red-500 via-amber-300 to-transparent blur-[2px] rounded-full animate-pulse opacity-90"></div><div class="absolute bottom-0 w-2.5 h-14 bg-gradient-to-t from-yellow-300 via-amber-100 to-transparent rounded-full"></div><div class="absolute bottom-0 w-1.5 h-8 bg-gradient-to-t from-cyan-400 via-blue-500 to-transparent rounded-full"></div></div><div class="relative flex flex-col items-center"><div class="w-3.5 h-16 bg-gradient-to-t from-red-600 via-amber-400 to-transparent blur-[1.5px] rounded-full animate-ping opacity-95"></div><div class="absolute bottom-0 w-2 h-12 bg-gradient-to-t from-yellow-300 via-amber-200 to-transparent rounded-full animate-pulse"></div><div class="absolute bottom-0 w-1.5 h-7 bg-gradient-to-t from-cyan-300 via-cyan-400 to-transparent rounded-full blur-[0.5px]"></div><div class="absolute -top-2 w-1.5 h-1.5 bg-yellow-300 rounded-full animate-ping"></div></div></div><div class="relative w-14 md:w-16 h-28 filter drop-shadow-[0_10px_18px_rgba(0,0,0,0.9)] z-10"><svg class="w-full h-full overflow-visible" fill="none" viewBox="0 0 64 112" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hwGoldBody" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFE083"></stop><stop offset="50%" stop-color="#FED01B"></stop><stop offset="100%" stop-color="#E5B200"></stop></linearGradient><linearGradient id="hwCockpitGlass" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" stop-color="#0F172A"></stop><stop offset="100%" stop-color="#1E293B"></stop></linearGradient><filter id="flameGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite></filter></defs><rect fill="#000000" height="88" opacity="0.4" rx="10" width="46" x="9" y="12"></rect><rect fill="#0F172A" height="18" rx="2.5" stroke="#1B1B1E" stroke-width="1.5" width="7" x="1" y="20"></rect><rect fill="#0F172A" height="18" rx="2.5" stroke="#1B1B1E" stroke-width="1.5" width="7" x="56" y="20"></rect><rect fill="#0F172A" height="20" rx="2.5" stroke="#1B1B1E" stroke-width="1.5" width="8" x="0" y="74"></rect><rect fill="#0F172A" height="20" rx="2.5" stroke="#1B1B1E" stroke-width="1.5" width="8" x="56" y="74"></rect><circle cx="4.5" cy="29" fill="#FED01B" r="1.8"></circle><circle cx="59.5" cy="29" fill="#FED01B" r="1.8"></circle><circle cx="4" cy="84" fill="#FED01B" r="2"></circle><circle cx="60" cy="84" fill="#FED01B" r="2"></circle><rect fill="#1B1B1E" height="8" rx="1" stroke="#DC2626" stroke-width="1" width="7" x="16" y="98"></rect><rect fill="#1B1B1E" height="8" rx="1" stroke="#DC2626" stroke-width="1" width="7" x="41" y="98"></rect><ellipse cx="19.5" cy="102" fill="#00E5FF" filter="url(#flameGlow)" rx="2" ry="3"></ellipse><ellipse cx="44.5" cy="102" fill="#00E5FF" filter="url(#flameGlow)" rx="2" ry="3"></ellipse><path d="M13 100 L7 88 C4 76 6 38 9 24 C12 12 20 4 32 4 C44 4 52 12 55 24 C58 38 60 76 57 88 L51 100 Z" fill="url(#hwGoldBody)" stroke="#1B1B1E" stroke-width="2.8"></path><path d="M26 4 L32 4 L32 100 L26 100 Z" fill="#0058BE"></path><path d="M32 4 L38 4 L38 100 L32 100 Z" fill="#B21F32"></path><path d="M8 52 L12 56 L12 80 L7 84 Z" fill="#1B1B1E"></path><path d="M56 52 L52 56 L52 80 L57 84 Z" fill="#1B1B1E"></path><polygon fill="#FEF08A" filter="url(#flameGlow)" points="13,10 19,5 22,12 14,16" stroke="#FED01B" stroke-width="0.8"></polygon><polygon fill="#FEF08A" filter="url(#flameGlow)" points="51,10 45,5 42,12 50,16" stroke="#FED01B" stroke-width="0.8"></polygon><polygon fill="#1B1B1E" points="25,18 39,18 36,25 28,25"></polygon><polygon fill="url(#hwCockpitGlass)" points="18,48 46,48 41,30 23,30" stroke="#1B1B1E" stroke-width="2"></polygon><polygon fill="url(#hwCockpitGlass)" points="19,62 45,62 43,76 21,76" stroke="#1B1B1E" stroke-width="2"></polygon><rect fill="#FFFFFF" height="10" rx="2" stroke="#1B1B1E" stroke-width="1.5" width="18" x="23" y="50"></rect><text fill="#B21F32" font-family="'Anton', sans-serif" font-size="8" font-weight="bold" text-anchor="middle" x="32" y="58">#26</text><rect fill="#1B1B1E" height="7" rx="2" stroke="#FED01B" stroke-width="1.8" width="54" x="5" y="94"></rect><rect fill="#B21F32" height="4" width="12" x="26" y="95.5"></rect></svg></div><div class="mt-1 bg-black/90 text-yellow-300 font-label-code text-[9px] px-3 py-0.5 rounded-full border border-yellow-400 font-bold whitespace-nowrap shadow-[0px_2px_4px_rgba(0,0,0,0.5)] flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span><span class="">HOT WHEELS #26 // 110 MPH V8</span></div></div></div>
+<!-- 5 CHRONOLOGICAL MILESTONES WITH BALANCED TELEMETRY LINES -->
+<div class="space-y-16 md:space-y-24 relative z-20">
+<!-- CHECKPOINT 01 // ORIGIN: UJJAIN (2008) -->
+<div class="relative grid grid-cols-1 md:grid-cols-12 items-center checkpoint-row" data-checkpoint="1">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-secondary-container border-3 border-on-surface text-black flex items-center justify-center font-label-code font-bold text-sm shadow-[3px_3px_0px_#1b1b1e]">
+                #01
+              </div>
+<span class="mt-1 bg-black text-yellow-300 px-2 py-0.5 rounded font-label-code text-[9px] font-bold border border-yellow-400">START 🚩</span>
+</div>
+<div class="pl-16 md:pl-0 md:col-span-5 md:pr-8">
+<div class="border-3 border-on-surface bg-surface-container-lowest rounded-2xl p-5 md:p-7 shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all relative">
+<div class="tape-strip -top-3 left-8 w-24 h-6 -rotate-2 z-10"></div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b-2 border-on-surface/10 pb-2">
+<span class="font-label-code text-xs bg-secondary-fixed border border-on-surface px-2.5 py-0.5 rounded font-bold uppercase tracking-wider text-black flex items-center gap-1">
+<span class="">🏁</span> CHECKPOINT 01 // ORIGIN GRID
+                  </span>
+<span class="font-label-code text-xs font-bold bg-black text-secondary-container px-2.5 py-0.5 rounded">2008</span>
+</div>
+<h3 class="font-headline-sm text-2xl font-bold text-on-surface">Birth ~ Ujjain, Madhya Pradesh</h3>
+<p class="font-body-md text-sm font-semibold text-tertiary flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[16px]">temple_hindu</span> Baba Mahakal Ki Nagri · Sacred Roots
+                </p>
+<p class="font-body-md text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Born in the historic holy city of Ujjain on the banks of the Kshipra river. Rooted in spiritual resilience, cultural heritage, and deep grounded values that shape my creative patience and authentic design voice.
+                </p>
+</div>
+</div>
+<div class="hidden md:block md:col-span-2"></div>
+<!-- Telemetry Indicator Line Right -->
+<div class="hidden md:flex md:col-span-5 md:pl-8 items-center">
+<div class="w-full border-t-2 border-dashed border-on-surface/30 flex items-center justify-start gap-2">
+
+</div>
+</div>
+</div>
+<!-- CHECKPOINT 02 // 14-YR SCHOOLING (2012 – 2026) -->
+<div class="relative grid grid-cols-1 md:grid-cols-12 items-center checkpoint-row" data-checkpoint="2">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-primary-container text-white border-3 border-on-surface flex items-center justify-center font-label-code font-bold text-sm shadow-[3px_3px_0px_#1b1b1e]">
+                #02
+              </div>
+<span class="mt-1 bg-black text-cyan-400 px-2 py-0.5 rounded font-label-code text-[9px] font-bold border border-cyan-400">140 KM/H</span>
+</div>
+<!-- Telemetry Indicator Line Left -->
+<div class="hidden md:flex md:col-span-5 md:pr-8 items-center justify-end">
+<div class="w-full border-t-2 border-dashed border-on-surface/30 flex items-center justify-end gap-2">
+
+</div>
+</div>
+<div class="hidden md:block md:col-span-2"></div>
+<div class="pl-16 md:pl-0 md:col-span-5 md:pl-8">
+<div class="border-3 border-on-surface bg-surface-container-lowest rounded-2xl p-5 md:p-7 shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all relative">
+<div class="tape-strip -top-3 right-8 w-24 h-6 rotate-2 z-10"></div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b-2 border-on-surface/10 pb-2">
+<span class="font-label-code text-xs bg-primary-fixed border border-on-surface px-2.5 py-0.5 rounded font-bold uppercase tracking-wider text-primary flex items-center gap-1">
+<span class="">🏁</span> CHECKPOINT 02 / SCHOOLING PIT STOP
+                  </span>
+<span class="font-label-code text-xs font-bold bg-primary text-white px-2.5 py-0.5 rounded">2012 – 2026</span>
+</div>
+<h3 class="font-headline-sm text-2xl font-bold text-on-surface">Shri Kasera Bazar Vidya Niketan</h3>
+<p class="font-body-md text-sm font-semibold text-primary flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Indore, Madhya Pradesh
+                </p>
+<p class="font-body-md text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Fourteen formative years of holistic learning, student council initiatives, early layout sketching, and creative competitions that seeded a lifelong appreciation for visual hierarchy, balance, and craft discipline.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3 font-label-code text-xs">
+
+
+</div>
+</div>
+</div>
+</div>
+<!-- CHECKPOINT 03 // B.TECH CSIT (2026 – PRESENT) -->
+<div class="relative grid grid-cols-1 md:grid-cols-12 items-center checkpoint-row" data-checkpoint="3">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-black border-3 border-on-surface flex items-center justify-center font-label-code font-bold text-sm shadow-[3px_3px_0px_#1b1b1e]">
+                #03
+              </div>
+<span class="mt-1 bg-black text-yellow-300 px-2 py-0.5 rounded font-label-code text-[9px] font-bold border border-yellow-400">210 KM/H</span>
+</div>
+<div class="pl-16 md:pl-0 md:col-span-5 md:pr-8">
+<div class="border-3 border-on-surface bg-surface-container-lowest rounded-2xl p-5 md:p-7 shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all relative">
+<div class="tape-strip -top-3 left-10 w-24 h-6 -rotate-3 z-10"></div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b-2 border-on-surface/10 pb-2">
+<span class="font-label-code text-xs bg-secondary-fixed border border-on-surface px-2.5 py-0.5 rounded font-bold uppercase tracking-wider text-black flex items-center gap-1">
+<span class="">🏁</span> CHECKPOINT 03</span>
+<span class="font-label-code text-xs font-bold bg-black text-secondary-container px-2.5 py-0.5 rounded">2026 – PRESENT</span>
+</div>
+<h3 class="font-headline-sm text-2xl font-bold text-on-surface">B.Tech in CSIT @ Symbiosis University of Applied Sciences</h3>
+<p class="font-body-md text-sm font-semibold text-primary flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[16px]">domain</span> Symbiosis University of Applied Sciences (SUAS), Indore
+                </p>
+<p class="font-body-md text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Stepping deeply into computer science fundamentals: algorithms, data structures, fullstack web architectures, and tactile user interface engines. Connecting rigorous technical engineering with bold, neo-brutalist visual systems.
+                </p>
+</div>
+</div>
+<div class="hidden md:block md:col-span-2"></div>
+<!-- Telemetry Indicator Line Right -->
+<div class="hidden md:flex md:col-span-5 md:pl-8 items-center">
+<div class="w-full border-t-2 border-dashed border-on-surface/30 flex items-center justify-start gap-2">
+
+</div>
+</div>
+</div>
+<!-- CHECKPOINT 04 // CODEC SELECTION (SEPT 2026 – PRESENT) -->
+<div class="relative grid grid-cols-1 md:grid-cols-12 items-center checkpoint-row" data-checkpoint="4">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-tertiary text-white border-3 border-on-surface flex items-center justify-center font-label-code font-bold text-sm shadow-[3px_3px_0px_#1b1b1e]">
+                #04
+              </div>
+<span class="mt-1 bg-black text-rose-400 px-2 py-0.5 rounded font-label-code text-[9px] font-bold border border-rose-400">NITRO 285</span>
+</div>
+<!-- Telemetry Indicator Line Left -->
+<div class="hidden md:flex md:col-span-5 md:pr-8 items-center justify-end">
+<div class="w-full border-t-2 border-dashed border-on-surface/30 flex items-center justify-end gap-2">
+
+</div>
+</div>
+<div class="hidden md:block md:col-span-2"></div>
+<div class="pl-16 md:pl-0 md:col-span-5 md:pl-8">
+<div class="border-3 border-on-surface bg-surface-container-lowest rounded-2xl p-5 md:p-7 shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all relative">
+<div class="tape-strip -top-3 right-10 w-24 h-6 rotate-2 z-10"></div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b-2 border-on-surface/10 pb-2">
+<span class="font-label-code text-xs bg-[#ffdad9] border border-on-surface px-2.5 py-0.5 rounded font-bold uppercase tracking-wider text-tertiary flex items-center gap-1">
+<span class="">🏁</span> CHECKPOINT 04 // LEADERSHIP
+                  </span>
+<span class="font-label-code text-xs font-bold bg-tertiary text-white px-2.5 py-0.5 rounded">SEPT 2026 – NOW</span>
+</div>
+<h3 class="font-headline-sm text-2xl font-bold text-on-surface">CODEC Selection ~ Jr. WebDev Associate</h3>
+<p class="font-body-md text-sm font-semibold text-tertiary flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[16px]">groups</span> Selected Associate · Coding Club Leadership
+                </p>
+<p class="font-body-md text-sm text-on-surface-variant mt-2 leading-relaxed"></p><p class="">Selected as a Junior WebDev Associate at CODEC, the Coding Club at SUAS. Contributed to brand identity and design systems, crafted technical workshop creatives and keynote presentations, and helped organize technical events and hands-on learning sessions for the student community.</p><p class=""></p>
+</div>
+</div>
+</div>
+<!-- CHECKPOINT 05 // HACKATHONS & TECH GUILDS (2026 – PRESENT) -->
+<div class="relative grid grid-cols-1 md:grid-cols-12 items-center checkpoint-row" data-checkpoint="5">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 top-4 md:top-1/2 md:-translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-emerald-400 text-emerald-950 border-3 border-on-surface flex items-center justify-center font-label-code font-bold text-sm shadow-[3px_3px_0px_#1b1b1e]">
+                #05
+              </div>
+<span class="mt-1 bg-black text-emerald-400 px-2 py-0.5 rounded font-label-code text-[9px] font-bold border border-emerald-400">OVERDRIVE 🏁</span>
+</div>
+<div class="pl-16 md:pl-0 md:col-span-5 md:pr-8">
+<div class="border-3 border-on-surface bg-surface-container-lowest rounded-2xl p-5 md:p-7 shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all relative">
+<div class="tape-strip -top-3 left-10 w-24 h-6 -rotate-2 z-10"></div>
+<div class="flex flex-wrap items-center justify-between gap-2 mb-3 border-b-2 border-on-surface/10 pb-2">
+<span class="font-label-code text-xs bg-emerald-100 border border-on-surface px-2.5 py-0.5 rounded font-bold uppercase tracking-wider text-emerald-900 flex items-center gap-1">
+<span class="">🏁</span> CHECKPOINT 05</span>
+<span class="font-label-code text-xs font-bold bg-emerald-400 text-emerald-950 px-2.5 py-0.5 rounded">2026 – PRESENT</span>
+</div>
+<h3 class="font-headline-sm text-2xl font-bold text-on-surface">Campus &amp; Community</h3>
+<p class="font-body-md text-sm font-semibold text-emerald-800 flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[16px]">military_tech</span> Smart India Hackathon &amp; Professional Chapters
+                </p>
+<p class="font-body-md text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Active member across premier student tech chapters: ACM, IEEE, AWS Cloud Club, CODEC, and GDG Indore. Prototyping overnight under intense pressure for SIH, delivering 3-tier architecture decks, and high-impact fest graphics.
+                </p>
+</div>
+</div>
+<div class="hidden md:block md:col-span-2"></div>
+<!-- Telemetry Indicator Line Right -->
+<div class="hidden md:flex md:col-span-5 md:pl-8 items-center">
+<div class="w-full border-t-2 border-dashed border-on-surface/30 flex items-center justify-start gap-2">
+
+</div>
+</div>
+</div>
+</div>
+<!-- CHECKERED FINISH LINE STRIP -->
+<div class="mt-12 w-full checkered-pattern h-10 border-3 border-on-surface rounded-lg shadow-[4px_4px_0px_#1b1b1e] flex items-center justify-between px-4">
+<span class="text-white font-label-code text-xs font-bold tracking-wider">🏁 FINISH LINE</span>
+<div class="bg-surface-container-lowest border-2 border-on-surface px-4 py-1 rounded font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e]">
+            🏆 LAP 1 COMPLETE // PODIUM FINISH READY
+          </div>
+<span class="text-white font-label-code text-xs font-bold tracking-wider">🏁 POLE POSITION</span>
+</div>
+</div>
+</section>
+<!-- 3. INSTAGRAM VIRAL REEL SHOWCASE (@rawshourya - 135K VIEWS) -->
+<section class="space-y-8" id="instagram">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-2 border-on-surface pb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse border border-on-surface inline-block"></span>
+</div>
+<h2 class="font-headline-lg text-4xl md:text-5xl text-on-surface tracking-tight uppercase flex items-center gap-3">
+            INSTAGRAM // <span class="text-tertiary underline decoration-secondary-container decoration-wavy decoration-2">@RAWSHOURYA</span>
+</h2>
+<p class="font-body-md text-sm text-on-surface-variant mt-1 max-w-2xl">
+            From experiments in Canva to 135,000+ views across the creative dev community.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 bg-gradient-to-br from-rose-100 to-pink-100 text-tertiary font-headline-sm text-sm px-5 py-2.5 rounded-lg border-2 border-on-surface shadow-[4px_4px_0px_#1b1b1e] hover:-translate-y-0.5 transition-all group" href="https://www.instagram.com/rawshourya" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+<span class="">Open @rawshourya</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="border-4 border-on-surface bg-surface-container-lowest rounded-2xl p-6 md:p-10 shadow-[8px_8px_0px_#1b1b1e] relative overflow-hidden">
+<div class="tape-strip -top-3 left-12 w-28 h-6 -rotate-2 z-20"></div>
+<div class="tape-strip -bottom-3 right-16 w-24 h-6 rotate-2 z-20"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- 5:7 Proportional Grid Split -->
+<div class="lg:col-span-5 flex justify-center">
+<a class="block w-full max-w-[340px] group cursor-pointer" href="https://www.instagram.com/rawshourya" rel="noopener noreferrer" target="_blank">
+<div class="border-3 border-on-surface bg-on-surface rounded-2xl p-3 shadow-[6px_6px_0px_#1b1b1e] group-hover:-translate-y-1.5 transition-all relative overflow-hidden">
+<div class="flex items-center justify-between px-2 py-1 mb-2 text-white font-label-code text-[11px]">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+<span class="font-bold tracking-wider">REEL</span>
+</div>
+<span class="bg-secondary-container text-black px-2 py-0.5 rounded font-bold text-[10px]">
+                    🔥 143K+ VIEWS
+                  </span>
+</div>
+<div class="w-full aspect-[9/14] bg-surface-container rounded-xl overflow-hidden relative border-2 border-white/20">
+<img alt="Viral Reel - How I Design 3x Faster in Figma" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbc6VS5c_M43JDo9u9i5QbVLThrmemix3731626ytVQJGxNzMhUcRodXpi4Fw8MIN-3P1z9jJ4OHQc5S09QxEUfq3jnC0_fo10gbl8Mh6pVNqfHBSXK7LRbXIvOqVdE-uJQLbeAD1_VCOpyq5NceGGKpr1lBoPXJ3EsWTXw4Jem9LA-e5WLJS_mtxId72yr188qW-U8LNAZgqLrzqV-EJ3ShLje5hTBfhEHnj-XkFDMLa2891nJhLBT772KbTHvoTvkGmWNDkmmL18nY0">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-between p-4">
+<div class="flex justify-end">
+<span class="bg-black/60 text-white px-2 py-1 rounded-md text-[10px] font-label-code flex items-center gap-1 border border-white/20">
+<span class="material-symbols-outlined text-[13px]">graphic_eq</span> Original Audio
+                      </span>
+</div>
+<div class="flex flex-col items-center justify-center my-auto">
+<div class="w-16 h-16 rounded-full bg-secondary-container border-2 border-on-surface text-black flex items-center justify-center shadow-[4px_4px_0px_#000000] group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: &quot;FILL&quot; 1;">play_arrow</span>
+</div>
+</div>
+<div class="text-white space-y-1">
+<p class="font-headline-sm text-sm font-bold text-white line-clamp-1">The Scroll-Stopping Experiment</p>
+<p class="font-label-code text-[11px] text-gray-300">@rawshourya · 140K plays</p>
+</div>
+</div>
+</div>
+<div class="pt-3 px-2 flex items-center justify-between text-white font-label-code text-[11px]">
+<span class="text-emerald-400 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>2.7K Saves
+                  </span>
+<span class="text-cyan-300 font-bold">
+                    Tap to Watch ↗
+                  </span>
+</div>
+</div>
+</a>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<div class="flex flex-wrap items-center gap-2">
+<span class="bg-tertiary text-white border-2 border-on-surface font-label-code text-xs font-bold px-3 py-1 rounded-full shadow-[2px_2px_0px_#1b1b1e]">
+                VIRAL DROP ✨
+              </span>
+<span class="bg-secondary-container text-black border-2 border-on-surface font-label-code text-xs font-bold px-3 py-1 rounded-full shadow-[2px_2px_0px_#1b1b1e]">
+                140,000+ VIEWS
+              </span>
+<span class="bg-[#d8e2ff] text-primary border-2 border-on-surface font-label-code text-xs font-bold px-3 py-1 rounded-full shadow-[2px_2px_0px_#1b1b1e]">
+                10,400+ SHARES</span>
+</div>
+<div class="space-y-2">
+<h3 class="font-headline-md text-2xl md:text-3xl text-on-surface font-bold leading-tight">Connections Create What Credentials Can’t</h3>
+<p class="font-body-lg text-base md:text-lg text-on-surface-variant"></p><p class="">Breaking down my content creation journey, viral moments, creative experiments, and the strategies behind turning everyday ideas into scroll-stopping stories that reach thousands.</p><p class=""></p>
+</div>
+<div class="grid grid-cols-3 gap-3 pt-2">
+<div class="p-3 bg-surface-container border-2 border-on-surface rounded-lg shadow-[2px_2px_0px_#1b1b1e]">
+<div class="font-headline-sm text-2xl font-bold text-tertiary">143K+</div>
+<div class="font-label-code text-[11px] text-on-surface-variant font-bold">TOTAL PLAYS</div>
+</div>
+<div class="p-3 bg-surface-container border-2 border-on-surface rounded-lg shadow-[2px_2px_0px_#1b1b1e]">
+<div class="font-headline-sm text-2xl font-bold text-primary">10.4K</div>
+<div class="font-label-code text-[11px] text-on-surface-variant font-bold">POST SHARES</div>
+</div>
+<div class="p-3 bg-surface-container border-2 border-on-surface rounded-lg shadow-[2px_2px_0px_#1b1b1e]">
+<div class="font-headline-sm text-2xl font-bold text-yellow-600">100%</div>
+<div class="font-label-code text-[11px] text-on-surface-variant font-bold">ORGANIC REACH</div>
+</div>
+</div>
+<div class="bg-secondary-fixed/50 border-2 border-on-surface p-4 rounded-xl font-handwriting text-xl text-on-surface shadow-[3px_3px_0px_#1b1b1e] -rotate-1"><p class="">“Great things are done by a series of small things brought together.”</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. WHAT I WORK ON (Capabilities) -->
+<section class="space-y-6" id="skills">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-2 border-on-surface pb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container border border-on-surface inline-block"></span>
+</div>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface tracking-tight uppercase">
+            WHAT I WORK ON
+          </h2>
+</div>
+</div>
+<!-- Uniform 4-Column Card Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest border-2 border-on-surface p-6 rounded-xl shadow-[4px_4px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container border-2 border-on-surface flex items-center justify-center mb-4 shadow-[2px_2px_0px_#1b1b1e]">
+<span class="material-symbols-outlined text-black text-2xl">campaign</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">Event Collaterals &amp; Posters</h3>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
+              Bold college fest promos, keynote typography banners, and social carousels tuned for high engagement.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline flex items-center justify-between font-label-code text-xs text-on-surface">
+<span class="">01 / PRINT &amp; DIGITAL</span>
+<span class="material-symbols-outlined text-[16px]">palette</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-6 rounded-xl shadow-[4px_4px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-[#adc6ff] border-2 border-on-surface flex items-center justify-center mb-4 shadow-[2px_2px_0px_#1b1b1e]">
+<span class="material-symbols-outlined text-primary text-2xl">smartphone</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">UI / UX Prototyping</h3>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
+              Campus companion tools, clean mobile wireframes, and tactile Figma prototypes with solid user journeys.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline flex items-center justify-between font-label-code text-xs text-on-surface">
+<span class="">02 / INTERFACES</span>
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-6 rounded-xl shadow-[4px_4px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-[#ffdad9] border-2 border-on-surface flex items-center justify-center mb-4 shadow-[2px_2px_0px_#1b1b1e]">
+<span class="material-symbols-outlined text-tertiary text-2xl">code_blocks</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">Frontend Foundations</h3>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
+              Translating Figma mockups into structured HTML, modern CSS / Tailwind, and interactive JavaScript modules.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline flex items-center justify-between font-label-code text-xs text-on-surface">
+<span class="">03 / DEV BASICS</span>
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-6 rounded-xl shadow-[4px_4px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-emerald-200 border-2 border-on-surface flex items-center justify-center mb-4 shadow-[2px_2px_0px_#1b1b1e]">
+<span class="material-symbols-outlined text-emerald-800 text-2xl">groups</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface mb-2">Club &amp; Peer Leadership</h3>
+<p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
+              CODEC Junior WebDev Associate leading community design assets, student workshops, and hackathon logistics.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline flex items-center justify-between font-label-code text-xs text-on-surface">
+<span class="">04 / COMMUNITY</span>
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. MY DESIGNS & CREATIVE WORK (6 Featured Visuals) -->
+<section class="space-y-8" id="designs">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-2 border-on-surface pb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container border border-on-surface inline-block"></span>
+</div>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface tracking-tight uppercase">
+            MY DESIGNS &amp; CREATIVE WORK
+          </h2>
+<p class="font-body-md text-sm text-on-surface-variant mt-1">
+            Bold visuals, thoughtful layouts, and creative concepts brought to life through distinctive posters, flyers, and digital designs.
+          </p>
+</div>
+</div>
+<!-- Uniform 3x2 Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- CARD 01 -->
+<div class="border-2 border-on-surface bg-surface-container-lowest rounded-xl overflow-hidden shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between group">
+<div class="p-3.5 bg-primary-fixed border-b-2 border-on-surface flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary border border-on-surface inline-block"></span>
+<span class="font-label-code text-[11px] font-bold text-primary"><span style="color: rgb(0, 26, 66); font-family: &quot;Space Mono&quot;; background-color: rgb(216, 226, 255);" class="">01 · ILLUSTRATED EVENT POSTER</span></span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center bg-[#fdfbf7] relative">
+<div class="tape-strip -top-2 left-10 w-20 h-5 -rotate-2 z-10"></div>
+<div class="w-full aspect-[3/4] rounded-lg border-2 border-on-surface bg-surface-container overflow-hidden relative shadow-[3px_3px_0px_#1b1b1e]"><img alt="Tech Fest '26 Symbiosis Indore Keynote Poster Backdrop" class="absolute inset-0 w-full h-full object-cover blur-sm scale-110 opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6z1QEtVR-rqzUM5wdlbAyqLE6AtwzcciOakkp1q1-F0Um4-87bRQcOsV0TPjBrjZAAUqayzkPiTu3RL_Pwwdt-Aus7btokOtXeOzwNHrqHtX1NbER5zoxjoMZ5ESPsMRdbvEwr3DHC0WbTMyfOd6YZtGs7PZwld9cu4SXMhiWew0z7a7-O_972M8aUfcnh6BT3_oxNK4aONQ6_kCW6fjJgKhySc9XTr-epw_EylaYd11OWK7J6ZHIz95ixFPEQXDsfEMt6ap85fDqlek"><img alt="Tech Fest '26 Symbiosis Indore Keynote Poster" class="relative z-10 w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5xs8Hb04AI515RpMcyj-eRICteDF-CBGKOEbx8wbFH6gbhvy3OwxlOvUhIVsEIdvCUFO79tWQGZOjvTWhNL2nUZ6dDWEBBW6pl8HELCMICbpkqZTYJW-aYj3rLQp9qFHu1fS7RSUq-JLji72EoS9CDVShQOXLIbUrcZAc-Lo55t-T_en0QCdCR2N_30YCst0rlUKtdloesbGJXrL77y16NZRyZzO5kshztYzRntD0LLkExg-vQuPfONzzIgIU3JV-lOVTEcHkoqPfrhY"></div>
+</div>
+<div class="p-5 pt-3 border-t-2 border-on-surface/10 space-y-3 bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors"></h3><h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-family: &quot;Space Grotesk&quot;; --tw-text-opacity: 1; color: rgb(0, 88, 190); user-select: text !important; outline: none !important; box-shadow: none !important;">ACM Event Flyer - THINKTANK'26</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1.5 leading-relaxed"><span style="font-family: &quot;Space Grotesk&quot;;" class="">Event poster for ACM ThinkTank featuring cartoon-style vector illustrations, bold typography, and a vibrant, playful visual aesthetic.</span></p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label-code text-[10px] bg-secondary-container/60 border border-on-surface px-2 py-0.5 rounded font-bold">Illustrator</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Playful</span>
+<span class="font-label-code text-[10px] bg-[#d8e2ff] border border-on-surface px-2 py-0.5 rounded text-primary font-bold">Vibrant</span>
+</div>
+</div>
+</div>
+<!-- CARD 02 -->
+<div class="border-2 border-on-surface bg-surface-container-lowest rounded-xl overflow-hidden shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between group">
+<div class="p-3.5 bg-[#f0edf1] border-b-2 border-on-surface flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary border border-on-surface inline-block"></span>
+<span class="font-label-code text-[11px] font-bold text-on-surface"><span style="font-family: &quot;Space Mono&quot;;" class="">02 · RECRUITMENT FLYER</span></span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center bg-[#fdfbf7] relative">
+<div class="tape-strip -top-2 right-12 w-20 h-5 rotate-3 z-10"></div>
+<div class="w-full aspect-[3/4] rounded-lg border-2 border-on-surface bg-surface-container overflow-hidden relative shadow-[3px_3px_0px_#1b1b1e]">
+<img alt="The Human Element of Type Editorial Zine" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR9WyscGAC4jJZJpRKQpn9tQZFShkItDGQIQM3JYgqE4JXS_EXsoZS09jS0m3-82YD_j4HPRwbJq7xSeOzGceQtcuUMkvwqsw0SHXW1SFx5VyP-c2hMDLjci5xwJhJfi_G1i8qoHveVtrbDIATOQ-SDafrsQnfg1wzvDEqGMQKU_KiRVG5GBxub7psBnRgmvEnn0xLsvRfszrJkjtkLqCbrJsQtdIs1OdbepyFf4c966xABiIqTQ08iBB4PB0znUiCCW9rXpav3VMUX6A">
+</div>
+</div>
+<div class="p-5 pt-3 border-t-2 border-on-surface/10 space-y-3 bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors"></h3><h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-family: &quot;Space Grotesk&quot;; --tw-text-opacity: 1; color: rgb(0, 88, 190); user-select: text !important; outline: none !important; box-shadow: none !important;">CODEC Recruitment Campaign</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1.5 leading-relaxed"><span style="font-family: &quot;Space Grotesk&quot;;" class="">Description: Recruitment flyer design featuring bold typography, playful visuals, and a distinctive creative direction to attract aspiring members to the coding club.</span></p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Promotional</span>
+<span class="font-label-code text-[10px] bg-secondary-container/60 border border-on-surface px-2 py-0.5 rounded font-bold">Editorial</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Typography</span>
+</div>
+</div>
+</div>
+<!-- CARD 03 -->
+<div class="border-2 border-on-surface bg-surface-container-lowest rounded-xl overflow-hidden shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between group">
+<div class="p-3.5 bg-emerald-100 border-b-2 border-on-surface flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-on-surface inline-block"></span>
+<span class="font-label-code text-[11px] font-bold text-emerald-900"><span style="font-family: &quot;Space Mono&quot;;" class="">03 · IEEE BRANDLAB POSTER</span></span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center bg-[#fdfbf7] relative">
+<div class="tape-strip -top-2 left-8 w-20 h-5 -rotate-3 z-10"></div>
+<div class="w-full aspect-[3/4] rounded-lg border-2 border-on-surface bg-surface-container overflow-hidden relative shadow-[3px_3px_0px_#1b1b1e]">
+<img alt="CampusHub Mobile UI Design Spec" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1EHCpdM1mSX-Dcn_yG_xb6N8QoLSQlPq2tykiG5K0qJ7pGhpinGYERgh668OMQe5NDlrChG6oehC66e99XgvCpMiwQqojUCoShC-9S4OLftuJUaeRPTm5_GWWptF_wvAIOicK2liRiBkJgvUXEcPOC9sqx9G73B4GuLi6QUaYLvkJSSTQ0TvMYOajHYD9l0Vl73p3usaAxUsXXGfZe_oWQ7xbrtVuEn9DzCtPfiwvIK8JYPwmyKowGpvUnufyl-I2Ia_k5sTvGSIYaxU">
+</div>
+</div>
+<div class="p-5 pt-3 border-t-2 border-on-surface/10 space-y-3 bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors"></h3><h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors" style="--tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; font-family: &quot;Space Grotesk&quot;; --tw-text-opacity: 1; color: rgb(0, 88, 190); user-select: text !important; outline: none !important; box-shadow: none !important;">Creative Identity Meets Innovation</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1.5 leading-relaxed"><span style="font-family: &quot;Space Grotesk&quot;; font-size: 13px;" class="">Event poster design for IEEE BrandLab featuring bold typography, modern layouts, and a distinctive visual identity crafted for the campus creative community.</span></p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label-code text-[10px] bg-emerald-200 border border-on-surface px-2 py-0.5 rounded font-bold">Promotional</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Editorial</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Graphics</span>
+</div>
+</div>
+</div>
+<!-- CARD 04 -->
+<div class="border-2 border-on-surface bg-surface-container-lowest rounded-xl overflow-hidden shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between group">
+<div class="p-3.5 bg-tertiary-fixed border-b-2 border-on-surface flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary border border-on-surface inline-block"></span>
+<span class="font-label-code text-[11px] font-bold text-tertiary">04 · CODEC BRAND SYSTEM</span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center bg-[#fdfbf7] relative">
+<div class="tape-strip -top-2 right-10 w-20 h-5 rotate-3 z-10"></div>
+<div class="w-full aspect-[3/4] rounded-lg border-2 border-on-surface bg-surface-container overflow-hidden relative shadow-[3px_3px_0px_#1b1b1e]">
+<img alt="CODEC Club Brand Identity Specification" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7EV-kG7r0lmejL0g84lSLb_KTimdw4DoXoSBiKKRyUzcy0g2n-Wr2d6tQJtt1qih4DL3qFoY5jHOwvP89dywB9b5q2DhFB1fJtm8uVw_MnBDJ2m_n1uA8k8kd3tLqAuEopDTfbMyiByRhY98kyTGHBeQTvScGHkbRozZqdKSWSII8UfTWB00tnL-H5IDDqCeuO5BYd3-iWglA4Y4rl7mA_NphBPyFPhYeQMNAFJ3ZErq_J4Vj4XprX75vXGQz3d9JbJ4k66zg02-0CQg">
+</div>
+</div>
+<div class="p-5 pt-3 border-t-2 border-on-surface/10 space-y-3 bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors">CODEC Club Identity System</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1.5 leading-relaxed"><span style="font-family: &quot;Space Grotesk&quot;;" class="">Description: Summer camp poster design featuring playful illustrations, vibrant colours, and cheerful typography to capture the joy of childhood adventures.</span></p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label-code text-[10px] bg-[#ffdad9] border border-on-surface px-2 py-0.5 rounded text-tertiary font-bold">Illustrative</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Typography</span>
+<span class="font-label-code text-[10px] bg-secondary-container/60 border border-on-surface px-2 py-0.5 rounded font-bold">Visual Creative</span>
+</div>
+</div>
+</div>
+<!-- CARD 05 -->
+<div class="border-2 border-on-surface bg-surface-container-lowest rounded-xl overflow-hidden shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between group">
+<div class="p-3.5 bg-yellow-100 border-b-2 border-on-surface flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container border border-on-surface inline-block"></span>
+<span class="font-label-code text-[11px] font-bold text-black">05 · HACKATHON ARCHITECTURE</span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center bg-[#fdfbf7] relative">
+<div class="tape-strip -top-2 left-10 w-20 h-5 -rotate-2 z-10"></div>
+<div class="w-full aspect-[3/4] rounded-lg border-2 border-on-surface bg-surface-container overflow-hidden relative shadow-[3px_3px_0px_#1b1b1e]">
+<img alt="Smart India Hackathon 3-Tier Architecture Slide" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9pVj4AH8k2pi-oOJAO3XJIKCc-lUh_AWNbIMVdIAX0O8BYGPOd1zmneBxYxjWiqHgg9j3OrBgsVy78KGwClp5r47nnk1-ZBTvtlQaVVmhF-p7TNM1ftpdzNJeWzlQ_gTngFE5Cw5tuXCD4kgaGccuPcaDbVEVjWGVTFQxU9XjCEm7Bx6kcOGQVPp6XUpMmAK7oQ75JaghGfhK9XhmQ178mikh1LTP8zh7krxp8m1KtDymmAgPcYILz5aYpEsRFICEcvmkP9Nx3RurbY8">
+</div>
+</div>
+<div class="p-5 pt-3 border-t-2 border-on-surface/10 space-y-3 bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Smart India Hackathon Pitch Slide</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1.5 leading-relaxed"><span style="font-family: &quot;Space Grotesk&quot;;" class="">Promotional poster concept for Hot Wheels featuring dynamic racing visuals, bold typography, and energetic compositions that capture the thrill of high-speed automotive culture.</span></p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Figma</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Infographics</span>
+<span class="font-label-code text-[10px] bg-[#d8e2ff] border border-on-surface px-2 py-0.5 rounded text-primary font-bold">Product Design</span>
+</div>
+</div>
+</div>
+<!-- CARD 06 -->
+<div class="border-2 border-on-surface bg-surface-container-lowest rounded-xl overflow-hidden shadow-[6px_6px_0px_#1b1b1e] hover:-translate-y-1 transition-all flex flex-col justify-between group">
+<div class="p-3.5 bg-[#adc6ff]/40 border-b-2 border-on-surface flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary border border-on-surface inline-block"></span>
+<span class="font-label-code text-[11px] font-bold text-primary">06 · BRAND &amp; PRODUCT STRATEGY</span>
+</div>
+</div>
+<div class="p-4 flex-1 flex flex-col justify-center items-center bg-[#fdfbf7] relative">
+<div class="tape-strip -top-2 right-12 w-20 h-5 rotate-2 z-10"></div>
+<div class="w-full aspect-[3/4] rounded-lg border-2 border-on-surface bg-surface-container overflow-hidden relative shadow-[3px_3px_0px_#1b1b1e]">
+<img alt="Creative Identity Concept Presentation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTGBV9EtRMAGYBHs5hFW_K3C_X3SXu1Xr3xadK4ayKufjGpT4xddG3IL-vpoSXHiZRbC-XopLmlj8dcQULxxXPgn_g8lsqG0dvusHuDa6PLKl1_4lAkALUNP3GZuQUM0JPby2z5hwIWpEs2aV0qMtT5u-m5-m-cBQwFiPM_eOHPqwNFA6yygc_fFCZuMeDGBZ1bTErzoef-DUPbkTF0IEbAussJIuGDKJMvnShfmdgp6hdAAerKnNqPycS1_wXUkM3FWI_Yvbg5uSVz10">
+</div>
+</div>
+<div class="p-5 pt-3 border-t-2 border-on-surface/10 space-y-3 bg-surface-container-lowest">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Concept. Design. Refine. Launch.</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1.5 leading-relaxed"><span style="font-family: &quot;Space Grotesk&quot;;" class="">Creative showcase for ShouryaBuilds featuring brand strategy, visual identity, UI/UX concepts, and premium layouts crafted to turn ideas into impactful digital experiences.</span></p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label-code text-[10px] bg-[#d8e2ff] border border-on-surface px-2 py-0.5 rounded text-primary font-bold">Canva</span>
+<span class="font-label-code text-[10px] bg-surface-container border border-outline px-2 py-0.5 rounded">Branding</span>
+<span class="font-label-code text-[10px] bg-secondary-container/60 border border-on-surface px-2 py-0.5 rounded font-bold">Visual System</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. MOMENTS & CAMPUS LIFE -->
+<section class="space-y-8" id="events">
+<div class="flex flex-wrap items-center justify-between gap-4 border-b-2 border-on-surface pb-4">
+<div class="flex items-center gap-3">
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface tracking-tight uppercase">
+            MOMENTS &amp; CAMPUS LIFE
+          </h2>
+<span class="bg-secondary-container border-2 border-on-surface px-2.5 py-0.5 rounded-full font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e]">
+            CAMPUS ARCHIVE
+          </span>
+</div>
+
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest border-2 border-on-surface p-4 pb-5 rounded-lg shadow-[5px_5px_0px_#1b1b1e] -rotate-1 hover:rotate-0 transition-transform relative group">
+<div class="tape-strip -top-3 left-1/2 -translate-x-1/2 w-20 h-5 z-10"></div>
+<div class="aspect-square bg-surface-container border-2 border-on-surface overflow-hidden relative mb-3">
+<img alt="Campus Lab WebDev Mentorship" class="w-full h-full object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBodaPP_aqZM76m1S8_ZBjpQrQWHTMAtA1FIjXp-MhM2lrwjjm1GjF-AbVDuL5J1xSA_XmBiRxKAfEmQ73qjcAwxGXD0KugsfWY5u39EYTdm907U1A5snQi9iWYS3EZU3pWGiO7rp4DC3koLuToSrRg7vNz6Wqc-uD90TxQM5j5jFBLMIQshCIQyXT4LR_mAnNVHo7kidQvTV7THGxCLRaoFcerjLMyCiRFjlA6rFgGQweb_sw4TTItjPcRs5iDLZd0tR2NnPIpGktvobo">
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<span class="font-handwriting text-xl font-bold text-on-surface"> IEEE World SUAS Conference</span>
+
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant">Contributed to the team behind a university-level conference, supporting collaboration and event execution.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-4 pb-5 rounded-lg shadow-[5px_5px_0px_#1b1b1e] rotate-2 hover:rotate-0 transition-transform relative group">
+<div class="tape-strip -top-3 left-1/2 -translate-x-1/2 w-20 h-5 z-10"></div>
+<div class="aspect-square bg-surface-container border-2 border-on-surface overflow-hidden relative mb-3">
+<img alt="Campus Lab WebDev Mentorship" class="w-full h-full object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjpbzIEFBEyWtJIH79jKgrod7esxMtdohcvek6-49Mse14cKIeDLQjwisGmQgV2yY8dlI2Sv8_czYvGh5yQ1HtmIeyasA5yILBy1RSNP7Sp7zcA7M61HbXvhYhrQtdsB4o1N4R4WpVlGc9R-ejeSY89lGVJT4v3Nah-9HIJZnfo5fIP3Q6WGR3cf6qul7tDKf6DmtlWPVQ5IlCWXNANZ7rmPO8-UT8z6WBwYM-rJEjm5GVtDj9KEHZJquP3RnLt-p4DBAZcBz9eAY4_jo">
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<span class="font-handwriting text-xl font-bold text-on-surface">SUAS Navratri</span>
+
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant">Worked with the campus Navratri team to help bring festive celebrations to life.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-4 pb-5 rounded-lg shadow-[5px_5px_0px_#1b1b1e] -rotate-2 hover:rotate-0 transition-transform relative group">
+<div class="tape-strip -top-3 left-1/2 -translate-x-1/2 w-20 h-5 z-10"></div>
+<div class="aspect-square bg-surface-container border-2 border-on-surface overflow-hidden relative mb-3">
+<img alt="Campus Lab WebDev Mentorship" class="w-full h-full object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmGeCR0hCPwCh5zbd9CVUYRAj8PFzS-UdUs6Nkcz_oXOA-17V7IvP76uiVrQ_wWEnc4PhlSL_0J1krHhf5-PYn5MXNdhX6d0PRsEcKEOHC0x2f5zmx3NKfg71VRMVr-NGrGw9EjW16duoF_wMLp_3SukjFuMl2qp-y4YtKSSCTwxxWFf77ayc89nCTEAvHQ_cakXnenp6VhmpiJOHkwhCji8ESHOOUUsXjq_eyufXEf2ZCPzCEV8Y1V-4MapmKnN15wPqkAAb3dNHOJv8">
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<span class="font-handwriting text-xl font-bold text-on-surface">NSYP Indore</span>
+
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant">Led community events and initiatives, taking responsibility for planning and coordination.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest border-2 border-on-surface p-4 pb-5 rounded-lg shadow-[5px_5px_0px_#1b1b1e] rotate-1 hover:rotate-0 transition-transform relative group">
+<div class="tape-strip -top-3 left-1/2 -translate-x-1/2 w-20 h-5 z-10"></div>
+<div class="aspect-square bg-surface-container border-2 border-on-surface overflow-hidden relative mb-3">
+<img alt="Campus Lab WebDev Mentorship" class="w-full h-full object-cover rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy46Zq9MZnQYQOF4eLNQQ-QC4tE8D6HPIgvf9CmkeWrWjiSE12JPC5ZymFQA_0x6AdjbSFRwfx1KK8Y8F-M6vEVmKruA72nke1Ah4ykshevkeqlAfNFx2TH8PS_BG9jIaSHLmEHryF3bbS9AY2O8z2hS0pAHu_niKnkvXzz2hRdoX_HQvvQiFEnCSJAWJfoGRjw8Qh3vhuUiawaTHvil0QdPigz3ioZx7Tm_EbyaRrP7lnQ3RgMnhbpJ56zOwMOd2ZrY70Ndkvq3FTSks">
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<span class="font-handwriting text-xl font-bold text-on-surface">CODEC Events</span>
+
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant">Organized and participated in coding club events, helping build an active campus tech community.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CONTACT SECTION WITH PLAYABLE "HOT WHEELS TURBO DRIFT" MINI-GAME -->
+<section class="relative space-y-6" id="contact">
+<div class="border-4 border-on-surface bg-secondary-container rounded-2xl p-6 md:p-10 shadow-[8px_8px_0px_#1b1b1e] relative overflow-hidden">
+<div class="tape-strip -top-3 right-16 w-28 h-6 rotate-2 z-20"></div>
+<div class="tape-strip -bottom-3 left-16 w-28 h-6 -rotate-2 z-20"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div class="space-y-2">
+<div class="inline-block bg-surface-container-lowest border-2 border-on-surface px-3 py-1 rounded-md font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e]">
+              GET IN TOUCH &amp; PLAY MINI-GAME
+            </div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-on-surface tracking-tight uppercase leading-none">
+              HAVE A PROJECT IN MIND?<br>
+<span class="text-tertiary underline decoration-on-surface decoration-2">LET'S BUILD SOMETHING GREAT!</span>
+</h2>
+<p class="font-body-lg text-base md:text-lg text-on-surface font-medium max-w-xl">
+              Always open for student internships, design collaborations, campus initiatives, and creative freelance sprints.
+            </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-emerald-600 animate-ping"></span>
+
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: PLAYABLE HOT WHEELS TURBO DRIFT MINI-GAME -->
+<div class="lg:col-span-7 bg-slate-950 text-white border-3 border-on-surface rounded-2xl p-4 md:p-5 shadow-[6px_6px_0px_#1b1b1e] relative flex flex-col justify-between">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b-2 border-white/20">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+<span class="font-headline-sm text-base md:text-lg font-bold text-yellow-300 tracking-wide flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px]">sports_esports</span>
+                  HOT WHEELS TURBO DRIFT
+                </span>
+</div>
+<div class="flex items-center gap-2 font-label-code text-xs">
+<span class="bg-slate-800 border border-white/20 px-2 py-0.5 rounded text-gray-300">
+                  SCORE: <strong class="text-yellow-400" id="game-score">0</strong>
+</span>
+<span class="bg-slate-800 border border-white/20 px-2 py-0.5 rounded text-gray-300">
+                  BEST: <strong class="text-emerald-400" id="game-best">0</strong>
+</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-code text-gray-400 pb-2 px-1">
+<span class="flex items-center gap-1 text-gray-300">
+<span class="text-yellow-400">Dodge 404 Bugs</span> 👾 · <span class="text-emerald-400">Catch Figma Stars</span> ⭐
+              </span>
+<span class="text-yellow-400 font-bold hidden sm:inline">Score 100+ to Unlock VIP Trophy!</span>
+</div>
+<!-- Arcade Canvas Arena -->
+<div class="relative w-full aspect-[16/10] bg-slate-900 border-2 border-white/30 rounded-xl overflow-hidden shadow-inner flex items-center justify-center">
+<canvas class="w-full h-full block" height="300" id="game-canvas" width="480"></canvas>
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center p-4 text-center z-10 transition-opacity" id="game-overlay">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-black flex items-center justify-center mb-2 border-2 border-white shadow-[0_0_12px_#fed01b]">
+<span class="material-symbols-outlined text-2xl">sports_motorsports</span>
+</div>
+<h3 class="font-headline-sm text-xl md:text-2xl font-bold text-yellow-300 mb-1" id="game-overlay-title">
+                  READY TO DRIFT?
+                </h3>
+<p class="font-body-sm text-xs text-gray-300 max-w-sm mb-4" id="game-overlay-desc">
+                  Steer Shourya's Hot Wheels racer across 3 lanes! Use Left/Right keys or the lane buttons below.
+                </p>
+<button class="bg-yellow-400 hover:bg-yellow-300 text-black font-label-code text-xs md:text-sm font-bold px-6 py-2.5 rounded-lg border-2 border-white shadow-[3px_3px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5 cursor-pointer" id="start-game-btn">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span id="start-btn-text" class="">START RACE</span>
+</button>
+</div>
+</div>
+<!-- Controls -->
+<div class="pt-3 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<button aria-label="Steer Left" class="bg-slate-800 hover:bg-slate-700 active:bg-yellow-400 active:text-black text-white px-3 py-1.5 rounded-lg border border-white/30 font-label-code text-xs font-bold transition-colors flex items-center gap-1" id="btn-steer-left">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span class="">LEFT (A)</span>
+</button>
+<button aria-label="Steer Right" class="bg-slate-800 hover:bg-slate-700 active:bg-yellow-400 active:text-black text-white px-3 py-1.5 rounded-lg border border-white/30 font-label-code text-xs font-bold transition-colors flex items-center gap-1" id="btn-steer-right">
+<span class="">RIGHT (D)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="bg-slate-800 text-yellow-300 border border-yellow-300/40 hover:bg-slate-700 px-3 py-1 rounded font-label-code text-xs font-bold transition-colors" id="sound-toggle-btn">
+                  🔊 AUDIO: ON
+                </button>
+</div>
+</div>
+<!-- Perk Banner -->
+<div class="mt-3 p-2.5 rounded-lg border border-yellow-400/40 bg-yellow-400/10 flex items-center justify-between gap-2 text-xs font-label-code">
+<div class="flex items-center gap-2 text-yellow-300">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span id="game-status-text" class="">Unlock Golden Trophy note by scoring 100+ points!</span>
+</div>
+<button class="bg-yellow-400 text-black px-2 py-0.5 rounded text-[11px] font-bold hover:bg-yellow-300 transition-colors hidden" id="claim-vip-btn">
+                CLAIM TROPHY 🏆
+              </button>
+</div>
+</div>
+<!-- RIGHT COLUMN: DIRECT CHANNELS CARD -->
+<div class="lg:col-span-5 bg-surface-container-lowest border-3 border-on-surface p-6 rounded-2xl shadow-[6px_6px_0px_#1b1b1e] space-y-4 relative">
+<div class="tape-strip -top-3 right-6 w-20 h-5 rotate-2 z-10"></div>
+<div class="font-headline-sm text-lg font-bold border-b-2 border-outline-variant pb-2 flex justify-between items-center">
+<span class="">Direct Channels</span>
+<span class="material-symbols-outlined text-primary">alternate_email</span>
+</div>
+<a class="flex items-center justify-between p-3 rounded-lg border-2 border-on-surface bg-gradient-to-br from-rose-100 to-pink-100 hover:from-rose-200 hover:to-pink-200 transition-all shadow-[2px_2px_0px_#1b1b1e] group" href="https://www.instagram.com/rawshourya" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-tertiary text-white flex items-center justify-center border-2 border-on-surface shadow-[2px_2px_0px_#1b1b1e] group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-xs text-on-surface font-bold">Instagram</span>
+
+</div>
+
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-tertiary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg border-2 border-on-surface bg-surface-container hover:bg-surface-container-high transition-all shadow-[2px_2px_0px_#1b1b1e]" href="mailto:heyshouryamehta@gmail.com">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+<span class="font-label-code text-xs text-on-surface font-bold">heyshouryamehta@gmail.com</span>
+</div>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg border-2 border-on-surface bg-surface-container hover:bg-surface-container-high transition-all shadow-[2px_2px_0px_#1b1b1e]" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">link</span>
+<span class="font-label-code text-xs text-on-surface font-bold">LinkedIn / Shourya Mehta</span>
+</div>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-lg border-2 border-on-surface bg-surface-container hover:bg-surface-container-high transition-all shadow-[2px_2px_0px_#1b1b1e]" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<span class="font-label-code text-xs text-on-surface font-bold">GitHub / shouryamehta</span>
+</div>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<div class="pt-1 flex items-center justify-between">
+<span class="font-label-code text-[11px] text-outline font-bold">Always open for ideas &amp; collabs</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-surface-container-high border-t-4 border-on-surface shadow-[0px_-4px_0px_#1b1b1e] mt-20 relative overflow-hidden">
+<div class="w-full max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-b-2 border-on-surface pb-10">
+<div class="md:col-span-6 space-y-4">
+<div class="flex items-center gap-2.5">
+<span class="font-headline-lg text-3xl md:text-4xl text-on-surface tracking-wider font-bold">SHOURYA MEHTA</span>
+<span class="bg-secondary-container text-black font-label-code text-[10px] px-2 py-0.5 rounded border border-on-surface font-bold shadow-[2px_2px_0px_#1b1b1e]">TURBO EDITION</span>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant max-w-md">
+            CSIT undergraduate at Symbiosis Indore crafting bold visual identities, high-voltage fest graphics, interactive web prototypes, and creative reel tutorials.
+          </p>
+<div class="flex flex-wrap items-center gap-3 pt-1">
+<div class="inline-flex items-center gap-2 bg-emerald-100 border-2 border-on-surface px-3 py-1 rounded-full text-emerald-900 font-label-code text-xs font-bold shadow-[2px_2px_0px_#1b1b1e]">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+<span class="">Open for Summer 2025 Internships</span>
+</div>
+<div class="inline-flex items-center gap-1.5 bg-surface-container-lowest border-2 border-on-surface px-3 py-1 rounded-full font-label-code text-xs font-bold text-on-surface shadow-[2px_2px_0px_#1b1b1e]">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="">Indore</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 space-y-3">
+<div class="font-label-code text-xs font-bold text-primary uppercase tracking-wider border-b border-on-surface/20 pb-1">// NAVIGATION</div>
+<ul class="space-y-2 font-label-code text-xs font-bold">
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-on-surface hover:text-primary transition-colors" href="#home">HOME / HERO</a></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-on-surface hover:text-primary transition-colors" href="#journey">THE JOURNEY // TURBO ROAD</a></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-tertiary hover:underline flex items-center gap-1" href="#instagram">INSTAGRAM 135K REEL 🔥</a></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-on-surface hover:text-primary transition-colors" href="#skills">SKILLS &amp; DISCIPLINES</a></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-on-surface hover:text-primary transition-colors" href="#designs">DESIGNS &amp; CREATIVE WORK</a></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-on-surface hover:text-primary transition-colors" href="#events">CAMPUS LIFE ARCHIVE</a></li>
+<li class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[14px] text-tertiary">chevron_right</span><a class="text-on-surface hover:text-primary transition-colors" href="#contact">CONTACT &amp; MINI-GAME</a></li>
+</ul>
+</div>
+<div class="md:col-span-3 space-y-3">
+<div class="space-y-2">
+<a class="flex items-center justify-between p-2.5 rounded-lg border-2 border-on-surface bg-surface-container-lowest hover:bg-[#adc6ff] transition-colors shadow-[2px_2px_0px_#1b1b1e] font-label-code text-xs font-bold text-primary" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">link</span>LinkedIn / Shourya</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-2.5 rounded-lg border-2 border-on-surface bg-surface-container-lowest hover:bg-yellow-200 transition-colors shadow-[2px_2px_0px_#1b1b1e] font-label-code text-xs font-bold text-black" href="https://github.com" rel="noopener noreferrer" target="_blank">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">terminal</span>GitHub / shouryamehta</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-2.5 rounded-lg border-2 border-on-surface bg-surface-container-lowest hover:bg-emerald-100 transition-colors shadow-[2px_2px_0px_#1b1b1e] font-label-code text-xs font-bold text-on-surface" href="mailto:heyshouryamehta@gmail.com">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">mail</span>Email Direct</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-2">
+<div class="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+<span class="font-label-code text-xs font-bold text-on-surface">© 2026 Shourya Mehta.</span>
+<span class="hidden sm:inline text-outline">•</span>
+
+</div>
+<a class="inline-flex items-center gap-2 bg-secondary-container text-black font-label-code text-xs font-bold px-4 py-2 rounded-lg border-2 border-on-surface shadow-[3px_3px_0px_#1b1b1e] hover:-translate-y-1 hover:shadow-[5px_5px_0px_#1b1b1e] transition-all" href="#home">
+<span class="">BACK TO TOP</span>
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</a>
+</div>
+</div>
+</footer>
+<!-- SCRIPT: VERTICAL RACING ROAD SCROLL CONTROLLER & MINI-GAME -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. VERTICAL ROAD TRACK SCROLL CONTROLLER
+      const circuitSection = document.getElementById('racing-circuit-container');
+      const verticalCar = document.getElementById('vertical-hot-wheels-car');
+      const circuitSpeedBadge = document.getElementById('circuit-live-speed');
+
+      const speedsByMilestone = [
+        'SPEED: 140 KM/H',
+        'SPEED: 210 KM/H',
+        'SPEED: 285 KM/H',
+        'SPEED: 340 KM/H NITRO'
+      ];
+
+      function updateVerticalCarPosition() {
+        if (!circuitSection || !verticalCar) return;
+        const rect = circuitSection.getBoundingClientRect();
+        const sectionHeight = circuitSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+
+        const visibleStart = rect.top - (windowHeight * 0.4);
+        const scrollableRange = sectionHeight;
+        let progress = -visibleStart / scrollableRange;
+        progress = Math.max(0, Math.min(1, progress));
+
+        const maxTravel = Math.max(0, sectionHeight - 120);
+        const currentY = 24 + (progress * maxTravel);
+
+        verticalCar.style.transform = `translate(-50%, ${currentY}px)`;
+
+        const stepIndex = Math.min(3, Math.floor(progress * 4));
+        if (circuitSpeedBadge) {
+          circuitSpeedBadge.textContent = speedsByMilestone[stepIndex] || 'SPEED: 210 KM/H';
+        }
+      }
+
+      window.addEventListener('scroll', updateVerticalCarPosition, { passive: true });
+      window.addEventListener('resize', updateVerticalCarPosition);
+      updateVerticalCarPosition();
+
+      // 2. AUDIO ENGINE ROAR
+      let engineCtx = null, gainNode = null, osc1 = null, osc2 = null, noiseNode = null;
+      let audioAllowed = true;
+      const toggleBtn = document.getElementById('track-audio-toggle');
+      const toggleLabel = document.getElementById('track-audio-label');
+
+      function initEngineAudio() {
+        if (engineCtx) return;
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          engineCtx = new AudioContext();
+          gainNode = engineCtx.createGain();
+          gainNode.gain.setValueAtTime(0.0001, engineCtx.currentTime);
+          gainNode.connect(engineCtx.destination);
+          osc1 = engineCtx.createOscillator();
+          osc1.type = 'sawtooth';
+          osc1.frequency.setValueAtTime(58, engineCtx.currentTime);
+          osc2 = engineCtx.createOscillator();
+          osc2.type = 'triangle';
+          osc2.frequency.setValueAtTime(116, engineCtx.currentTime);
+          const bSize = engineCtx.sampleRate * 2;
+          const buffer = engineCtx.createBuffer(1, bSize, engineCtx.sampleRate);
+          const data = buffer.getChannelData(0);
+          for (let i = 0; i < bSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * 0.25;
+          }
+          noiseNode = engineCtx.createBufferSource();
+          noiseNode.buffer = buffer;
+          noiseNode.loop = true;
+          const filter = engineCtx.createBiquadFilter();
+          filter.type = 'bandpass';
+          filter.frequency.setValueAtTime(180, engineCtx.currentTime);
+          filter.Q.setValueAtTime(3.0, engineCtx.currentTime);
+          noiseNode.connect(filter);
+          filter.connect(gainNode);
+          osc1.connect(gainNode);
+          osc2.connect(gainNode);
+          osc1.start();
+          osc2.start();
+          noiseNode.start();
+        } catch (e) {}
+      }
+
+      let fadeTimer = null;
+      function revEngine(intensity = 0.5) {
+        if (!audioAllowed) return;
+        initEngineAudio();
+        if (!engineCtx) return;
+        if (engineCtx.state === 'suspended') {
+          engineCtx.resume();
+        }
+        const now = engineCtx.currentTime;
+        const baseFreq = 55 + intensity * 75;
+        osc1.frequency.setTargetAtTime(baseFreq, now, 0.06);
+        osc2.frequency.setTargetAtTime(baseFreq * 2.05, now, 0.06);
+        const targetVol = Math.min(0.24, 0.08 + intensity * 0.16);
+        gainNode.gain.setTargetAtTime(targetVol, now, 0.04);
+        clearTimeout(fadeTimer);
+        fadeTimer = setTimeout(() => {
+          if (gainNode && engineCtx) {
+            gainNode.gain.setTargetAtTime(0.0001, engineCtx.currentTime, 0.25);
+          }
+        }, 260);
+      }
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          audioAllowed = !audioAllowed;
+          if (audioAllowed) {
+            toggleBtn.classList.remove('bg-slate-800', 'text-gray-300');
+            toggleBtn.classList.add('bg-tertiary', 'text-white');
+            toggleLabel.textContent = 'ROAR: ON (110 MPH)';
+            revEngine(0.9);
+          } else {
+            toggleBtn.classList.add('bg-slate-800', 'text-gray-300');
+            toggleBtn.classList.remove('bg-tertiary', 'text-white');
+            toggleLabel.textContent = 'ROAR: MUTED';
+            if (gainNode && engineCtx) {
+              gainNode.gain.setTargetAtTime(0.0001, engineCtx.currentTime, 0.05);
+            }
+          }
+        });
+      }
+
+      let lastScrollTop = window.scrollY;
+      let scrollThrottle = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const delta = Math.abs(currentScroll - lastScrollTop);
+        lastScrollTop = currentScroll;
+        const journeyEl = document.getElementById('journey');
+        if (!journeyEl) return;
+        const r = journeyEl.getBoundingClientRect();
+        const inView = r.top < window.innerHeight && r.bottom > 0;
+        if (inView && delta > 2) {
+          const now = Date.now();
+          if (now - scrollThrottle > 90) {
+            scrollThrottle = now;
+            const speedRatio = Math.min(1.0, delta / 28);
+            revEngine(speedRatio);
+          }
+        }
+      }, { passive: true });
+
+      // 3. PLAYABLE MINI-GAME
+      const canvas = document.getElementById('game-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      const scoreDisplay = document.getElementById('game-score');
+      const bestDisplay = document.getElementById('game-best');
+      const overlay = document.getElementById('game-overlay');
+      const startBtn = document.getElementById('start-game-btn');
+      const overlayTitle = document.getElementById('game-overlay-title');
+      const overlayDesc = document.getElementById('game-overlay-desc');
+      const startBtnText = document.getElementById('start-btn-text');
+      const soundToggleBtn = document.getElementById('sound-toggle-btn');
+      const claimVipBtn = document.getElementById('claim-vip-btn');
+      const gameStatusText = document.getElementById('game-status-text');
+
+      let audioEnabled = true;
+      let audioCtx = null;
+
+      function playBeep(freq = 440, type = 'sine', duration = 0.08) {
+        if (!audioEnabled) return;
+        try {
+          if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + duration);
+        } catch (err) {}
+      }
+
+      if (soundToggleBtn) {
+        soundToggleBtn.addEventListener('click', () => {
+          audioEnabled = !audioEnabled;
+          soundToggleBtn.textContent = audioEnabled ? '🔊 AUDIO: ON' : '🔇 AUDIO: OFF';
+        });
+      }
+
+      const lanes = [90, 240, 390];
+      let currentLane = 1;
+      let targetX = lanes[1];
+      let carX = lanes[1];
+      const carY = 230;
+      const carWidth = 32;
+      const carHeight = 52;
+
+      let isRunning = false;
+      let score = 0;
+      let highScore = parseInt(localStorage.getItem('shourya_drift_highscore') || '0', 10);
+      bestDisplay.textContent = highScore;
+
+      let roadOffset = 0;
+      let baseSpeed = 4.5;
+      let items = [];
+      let animId = null;
+      let lastSpawn = 0;
+
+      function resetGame() {
+        score = 0;
+        scoreDisplay.textContent = '0';
+        currentLane = 1;
+        carX = lanes[1];
+        targetX = lanes[1];
+        items = [];
+        baseSpeed = 4.5;
+        lastSpawn = Date.now();
+      }
+
+      function spawnItem() {
+        const laneIdx = Math.floor(Math.random() * 3);
+        const isStar = Math.random() < 0.45;
+        items.push({
+          x: lanes[laneIdx],
+          y: -25,
+          type: isStar ? 'star' : 'bug',
+          radius: isStar ? 12 : 14,
+          lane: laneIdx
+        });
+      }
+
+      function drawRoad() {
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#064e3b';
+        ctx.fillRect(0, 0, 24, canvas.height);
+        ctx.fillRect(canvas.width - 24, 0, 24, canvas.height);
+
+        const curbSegment = 24;
+        for (let y = -curbSegment + (roadOffset % curbSegment); y < canvas.height + curbSegment; y += curbSegment) {
+          ctx.fillStyle = (Math.floor((y - roadOffset) / curbSegment) % 2 === 0) ? '#dc2626' : '#ffffff';
+          ctx.fillRect(24, y, 6, curbSegment);
+          ctx.fillRect(canvas.width - 30, y, 6, curbSegment);
+        }
+
+        ctx.strokeStyle = '#fed01b';
+        ctx.lineWidth = 3;
+        ctx.setLineDash([16, 16]);
+        ctx.lineDashOffset = -roadOffset;
+
+        ctx.beginPath();
+        ctx.moveTo(165, 0);
+        ctx.lineTo(165, canvas.height);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(315, 0);
+        ctx.lineTo(315, canvas.height);
+        ctx.stroke();
+
+        ctx.setLineDash([]);
+      }
+
+      function drawCar(x, y) {
+        ctx.save();
+        ctx.translate(x, y);
+
+        // Tires
+        ctx.fillStyle = '#111827';
+        ctx.fillRect(-carWidth/2 - 3, -carHeight/2 + 6, 5, 12);
+        ctx.fillRect(carWidth/2 - 2, -carHeight/2 + 6, 5, 12);
+        ctx.fillRect(-carWidth/2 - 4, carHeight/2 - 16, 6, 13);
+        ctx.fillRect(carWidth/2 - 2, carHeight/2 - 16, 6, 13);
+
+        // Car Body
+        ctx.fillStyle = '#fed01b';
+        ctx.strokeStyle = '#1b1b1e';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.roundRect(-carWidth/2, -carHeight/2, carWidth, carHeight, [10, 10, 4, 4]);
+        ctx.fill();
+        ctx.stroke();
+
+        // Racing Stripes
+        ctx.fillStyle = '#0058be';
+        ctx.fillRect(-4, -carHeight/2, 4, carHeight);
+        ctx.fillStyle = '#b21f32';
+        ctx.fillRect(0, -carHeight/2, 4, carHeight);
+
+        // Windshield
+        ctx.fillStyle = '#0f172a';
+        ctx.beginPath();
+        ctx.roundRect(-carWidth/2 + 5, -carHeight/2 + 10, carWidth - 10, 12, 3);
+        ctx.fill();
+
+        // Rear Wing
+        ctx.fillStyle = '#1b1b1e';
+        ctx.fillRect(-carWidth/2 - 2, carHeight/2 - 4, carWidth + 4, 4);
+
+        ctx.restore();
+      }
+
+      function drawItems() {
+        items.forEach(item => {
+          ctx.save();
+          ctx.translate(item.x, item.y);
+          if (item.type === 'star') {
+            ctx.fillStyle = '#fed01b';
+            ctx.beginPath();
+            ctx.arc(0, 0, item.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.fillStyle = '#000000';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('⭐', 0, 1);
+          } else {
+            ctx.fillStyle = '#ef4444';
+            ctx.beginPath();
+            ctx.roundRect(-item.radius, -item.radius, item.radius * 2, item.radius * 2, 4);
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 9px monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('404', 0, 1);
+          }
+          ctx.restore();
+        });
+      }
+
+      function gameLoop() {
+        if (!isRunning) return;
+
+        roadOffset += baseSpeed;
+        baseSpeed = 4.5 + Math.min(score * 0.04, 5.0);
+
+        carX += (targetX - carX) * 0.22;
+
+        const now = Date.now();
+        if (now - lastSpawn > Math.max(650, 1300 - (score * 8))) {
+          spawnItem();
+          lastSpawn = now;
+        }
+
+        for (let i = items.length - 1; i >= 0; i--) {
+          const item = items[i];
+          item.y += baseSpeed;
+
+          const dx = Math.abs(carX - item.x);
+          const dy = Math.abs(carY - item.y);
+
+          if (dx < (carWidth/2 + item.radius - 4) && dy < (carHeight/2 + item.radius - 6)) {
+            if (item.type === 'star') {
+              score += 15;
+              scoreDisplay.textContent = score;
+              playBeep(640, 'triangle', 0.1);
+              items.splice(i, 1);
+              if (score > highScore) {
+                highScore = score;
+                bestDisplay.textContent = highScore;
+                localStorage.setItem('shourya_drift_highscore', highScore);
+              }
+              if (score >= 100 && claimVipBtn) {
+                claimVipBtn.classList.remove('hidden');
+                gameStatusText.textContent = "🏆 100+ SCORED! Click CLAIM to boost message!";
+              }
+            } else {
+              endGame();
+              return;
+            }
+            continue;
+          }
+
+          if (item.y > canvas.height + 40) {
+            if (item.type === 'bug') {
+              score += 2;
+              scoreDisplay.textContent = score;
+            }
+            items.splice(i, 1);
+          }
+        }
+
+        drawRoad();
+        drawItems();
+        drawCar(carX, carY);
+
+        animId = requestAnimationFrame(gameLoop);
+      }
+
+      function startGame() {
+        resetGame();
+        isRunning = true;
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        playBeep(520, 'square', 0.12);
+        animId = requestAnimationFrame(gameLoop);
+      }
+
+      function endGame() {
+        isRunning = false;
+        cancelAnimationFrame(animId);
+        playBeep(180, 'sawtooth', 0.25);
+
+        overlayTitle.textContent = "CRASH! 404 HIT";
+        overlayDesc.textContent = `You scored ${score} points! Hot Wheels turbo was pushed to the max.`;
+        startBtnText.textContent = "DRIFT AGAIN";
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+      }
+
+      function moveLeft() {
+        if (!isRunning) return;
+        if (currentLane > 0) {
+          currentLane--;
+          targetX = lanes[currentLane];
+          playBeep(380, 'sine', 0.05);
+        }
+      }
+
+      function moveRight() {
+        if (!isRunning) return;
+        if (currentLane < 2) {
+          currentLane++;
+          targetX = lanes[currentLane];
+          playBeep(420, 'sine', 0.05);
+        }
+      }
+
+      startBtn.addEventListener('click', startGame);
+
+      document.getElementById('btn-steer-left').addEventListener('click', moveLeft);
+      document.getElementById('btn-steer-right').addEventListener('click', moveRight);
+
+      window.addEventListener('keydown', (e) => {
+        if (['ArrowLeft', 'KeyA', 'a'].includes(e.key)) {
+          moveLeft();
+        } else if (['ArrowRight', 'KeyD', 'd'].includes(e.key)) {
+          moveRight();
+        }
+      });
+
+      if (claimVipBtn) {
+        claimVipBtn.addEventListener('click', () => {
+          claimVipBtn.textContent = "TROPHY CLAIMED! 🏆";
+        });
+      }
+
+      drawRoad();
+      drawCar(lanes[1], carY);
+    });
+  </script>
+
+
+
+
+
+
+</body></html>
